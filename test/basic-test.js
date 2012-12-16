@@ -56,6 +56,28 @@ describe('layers', function() {
         return done();
       });
   });
+
+  it('should ignore empty layers', function(done) {
+    var app = express();
+
+    layers(app);
+
+    app.use(start);
+    app.use(tag('a'));
+    app.lay('emptyLayer');
+    app.use(tag('b'));
+    app.use(complete);
+
+    var server = app.listen(3000);
+
+    request
+      .get('http://localhost:3000')
+      .end(function(res) {
+        assert.strictEqual(res.text, 'ab');
+        server.close();
+        return done();
+      });
+  });
 });
 
 function start(req, res, next) {
