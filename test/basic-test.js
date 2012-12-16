@@ -45,6 +45,7 @@ describe('layers', function() {
 
     app.lay('myLayer', tag('c'));
     app.lay('myLayer', createError);
+    app.lay('myLayer', tag('d'));
 
     var server = app.listen(3000);
 
