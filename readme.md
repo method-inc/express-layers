@@ -26,6 +26,6 @@ app.use(express.router);
 
 myComponent.js:
 ```js
-
-app.lay('static', express.static(path.join(__dirname, 'components/myComponent/public'))); // will be executed before router
+// this will be executed before express.router
+app.lay('static', express.static(path.join(__dirname, 'components/myComponent/public')));
 ```
