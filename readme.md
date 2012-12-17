@@ -1,6 +1,6 @@
 # Express Layers
 
-express-layers enables grouping of express middleware into named layers.
+Easily group middleware into named layers.
 
 ## Installation
 
@@ -10,7 +10,7 @@ $ npm install express-layers
 
 ## Usage
 
-Add layers to your app's middleware:
+app.js:
 ```js
 
 var express = require('express');
@@ -24,7 +24,7 @@ app.lay('static', express.static(path.join(__dirname, 'public'))); // adds middl
 app.use(express.router);
 ```
 
-Insert middleware on any layer at any time:
+myComponent.js:
 ```js
 
 app.lay('static', express.static(path.join(__dirname, 'components/myComponent/public'))); // will be executed before router
