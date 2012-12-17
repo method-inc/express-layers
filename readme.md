@@ -37,3 +37,15 @@ app.lay('static', express.static(path.join(__dirname, 'components/myComponent/pu
 $ npm install
 $ make test
 ```
+
+## With Components
+
+At Skookum, we organize node.js projects into components
+(components / feature groups / related user stories).
+A project might have components like: users, dashboard, marketing, errors, and admin.
+
+In order to keep the components decoupled, each component is responsible for registering its own routes, controller actions, views, models, etc.
+
+Using express-layers allows us to, for example, group all of the static middleware for different components into the same layer.
+Otherwise, routes for one component might intercept public files for another.
+
