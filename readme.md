@@ -28,7 +28,7 @@ app.use(express.router);
 myComponent.js:
 ```js
 // this will be executed before express.router
-app.lay('static', express.static(path.join(__dirname, 'components/myComponent/public')));
+app.lay('static', express.static(path.join(__dirname, 'components', 'myComponent', 'public')));
 ```
 
 ## Running Tests
@@ -47,5 +47,5 @@ A project might have components like: users, dashboard, marketing, errors, and a
 In order to keep the components decoupled, each component is responsible for registering its own routes, controller actions, views, models, etc.
 
 Using express-layers allows us to, for example, group all of the static middleware for different components into the same layer.
-Otherwise, routes for one component might intercept public files for another.
+Otherwise, routes for one component might intercept public files for another, since components are loaded one after another.
 
