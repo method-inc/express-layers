@@ -29,3 +29,10 @@ myComponent.js:
 // this will be executed before express.router
 app.lay('static', express.static(path.join(__dirname, 'components/myComponent/public')));
 ```
+
+## Running Tests
+
+```js
+$ npm install
+$ make test
+```
