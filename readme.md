@@ -17,6 +17,7 @@ var express = require('express');
 var layers = require('express-layers');
 
 var app = express();
+layers(app);  // adds app.lay()
 
 app.use(express.compress());
 app.lay('static');  // creates a layer
