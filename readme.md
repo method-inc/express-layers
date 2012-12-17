@@ -1,6 +1,6 @@
 # Express Layers
 
-Easily group middleware into named layers.
+Easily group express middleware into named layers.
 
 ## Installation
 
